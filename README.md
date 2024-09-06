@@ -58,7 +58,7 @@ This is a NestJS-based task management system that provides user authentication,
 
 The architecture of the system includes user requests flowing through JWT authentication, Redis caching for task data, and database interaction with PostgreSQL.
 
-[Architecture Diagram](assets/architecture.jpg)
+![Architecture Diagram](assets/architecture.jpg)
 
 ### Prerequisites
 - Node.js and npm installed
