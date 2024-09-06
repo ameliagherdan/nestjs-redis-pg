@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:13
+    container_name: nestjs_postgres
+    environment:
+      POSTGRES_USER: nest_user
+      POSTGRES_PASSWORD: nest_pass
+      POSTGRES_DB: nest_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - nestjs-network
+
+  redis:
+    image: redis:latest
+    container_name: nestjs_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - nestjs-network
+
+volumes:
+  postgres_data:
+  redis_data:
+
+networks:
+  nestjs-network:
